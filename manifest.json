@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Ad Highlighter",
+  "description": "Detect advertisements easier with custom highlighting and identification.",
+  "version": "1.0",
+  "icons": {"128": ""},
+  "browser_action": {
+    "default_icon": "",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"]
+}
