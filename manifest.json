@@ -3,10 +3,18 @@
   "name": "Ad Highlighter",
   "description": "Detect advertisements easier with custom highlighting and identification.",
   "version": "1.0",
-  "icons": {"128": ""},
+  "icons": {"128": "iconfinder_chrome_395209.png"},
   "browser_action": {
-    "default_icon": "",
+    "default_icon": "iconfinder_chrome_395209.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab"]
+  "permissions": ["webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
+  "background": {
+	"scripts": ["blocked_domains.js", "background.js"]
+  },
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["*://*.google.com/*"]
+  }]
 }
