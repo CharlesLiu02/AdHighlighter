@@ -1,2 +1,2 @@
 # AdHighlighter
-This is an AD Highlighter. It installs malware. Pls like and enjoy
+This is an AD Highlighter. It installs malware. Pls smash that like button!
