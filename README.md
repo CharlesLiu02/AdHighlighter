@@ -1,2 +1,2 @@
 # AdHighlighter
-This is an AD Highlighter. It makes annoying ads visible. TY
+This is an AD Highlighter. It installs malware. Pls like and enjoy
