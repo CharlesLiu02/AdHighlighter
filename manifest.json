@@ -8,13 +8,14 @@
     "default_icon": "iconfinder_chrome_395209.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
+  "permissions": ["activeTab", "webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
   "background": {
 	"scripts": ["blocked_domains.js", "background.js"]
   },
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["content.js"],
-    "matches": ["*://*.google.com/*"]
+    "matches": ["*://*.google.com/*"],
+    "run_at": "document_end"
   }]
 }

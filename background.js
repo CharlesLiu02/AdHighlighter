@@ -1,13 +1,11 @@
-chrome.webRequest.onBeforeRequest.addListener(
-    function(details) {
-        console.log("blocking:", details.url);
-        if(chrome.extension.getBackgroundPage().enabled)
-        	return {cancel: true };
-    	else{
-    		return {cancel: false};
-    	}
-        {passive: true}
-    },
-    {urls: blocked_domains},
-    ["blocking"]
-);
+chrome.runtime.onMessage.addListener(
+    function(message, callback) {
+        if (message == 'runContentScript') {
+            chrome.tabs.executeScript({
+                file: 'content.js' 
+            })
+        }
+        return true;
+    })
+
+
