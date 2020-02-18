@@ -8,7 +8,7 @@
     "default_icon": "iconfinder_chrome_395209.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab", "webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
+  "permissions": ["*://*.google.com/*","activeTab", "webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
   "background": {
 	"scripts": ["blocked_domains.js", "background.js"]
   },

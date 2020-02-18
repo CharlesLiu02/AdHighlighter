@@ -1,7 +1,16 @@
-function highlighter() {
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(request.status);
+    foo = request.status;
+    check = request.initial;
+	return true;
+  });
+
+function highlighter(foo) {
 	
 	var highlight = document.getElementsByClassName('ads-visurl');
-	if(highlight != null)
+	if(foo)
 	{
 		for(var i = 0; i < highlight.length; i++) {
 			highlight[i].style.background = '#ccff00';
@@ -11,8 +20,14 @@ function highlighter() {
 	}
 
 	else {
+		for(var i = 0; i < highlight.length; i++) {
+			highlight[i].style.background = 'none';
+			highlight[i].getElementsByTagName('span')[0].style.background = 'none';
+		}
 		
 	}
 }
-
-
+var check;
+var foo;
+if(check)
+highlighter(foo);
