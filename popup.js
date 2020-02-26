@@ -8,17 +8,16 @@ chrome.runtime.onMessage.addListener(
 
 function updateLabel() {
     if (enabled == true) {
-        document.getElementById('toggle_button').value = "Disable"
+        document.getElementById('toggle_button').value = "Enable"
         foo = false;
     } else {
-        document.getElementById('toggle_button').value = "Enable"
+        document.getElementById('toggle_button').value = "Disable"
         foo = true;
     }
 }
 
 var enabled;
 var foo;
-var check = true;
 document.getElementById('toggle_button').onclick = function () {
     if (!enabled) {
         enabled = true;
@@ -28,7 +27,7 @@ document.getElementById('toggle_button').onclick = function () {
 
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
         // WAY 1
-        chrome.tabs.sendMessage(tabs[0].id, {status: foo, initital: check}),
+        chrome.tabs.sendMessage(tabs[0].id, {status: foo}),
             function () {
                 console.log('message sent')
             }
@@ -37,8 +36,7 @@ document.getElementById('toggle_button').onclick = function () {
 
     updateLabel();
 };
-
-
+updateLabel();
 /*updateLabel()
      enabled is undefined so toggle_button.value = "Enable" */
    

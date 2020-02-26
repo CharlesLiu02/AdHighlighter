@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         console.log(request.status);
         foo = request.status;
-        check = request.initial;
+        highlighter(foo)
         return true;
     });
 
@@ -36,6 +36,13 @@ function countAds(foo) {;
 var check;
 var foo;
 // if (check) {
-    highlighter(foo);
+if(check == null) {
+    highlighter(true);
+}
+else{
+    check = true;
+}
     countAds(foo);
+
+
 // }
