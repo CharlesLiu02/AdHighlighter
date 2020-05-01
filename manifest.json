@@ -1,3 +1,4 @@
+//Created by Team Oof 2019-2020 for the EDD course 
 {
   "manifest_version": 2,
   "name": "Ad Highlighter",
@@ -8,7 +9,7 @@
     "default_icon": "iconfinder_chrome_395209.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["*://*.google.com/*","activeTab", "webRequest", "webRequestBlocking", "http://*/", "https://*/", "activeTab"],
+  "permissions": ["activeTab", "webNavigation", "storage"],
   "background": {
 	"scripts": ["blocked_domains.js", "background.js"]
   },
